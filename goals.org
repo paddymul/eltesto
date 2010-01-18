@@ -1,0 +1,6 @@
+
+
+* window managament
+** default position of buffer types
+
+* testing/better compilation
