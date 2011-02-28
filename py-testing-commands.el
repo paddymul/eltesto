@@ -1,4 +1,4 @@
-
+ 
 (defmacro def-interactive (name args &rest body)
   "automatically inserts a call to (interactive) into the
 function body"
@@ -59,7 +59,8 @@ function body"
      (2 font-lock-function-name-face))))
 
 (defvar paddy-py-test-bin-directory
-  "/Library/Frameworks/Python.framework/Versions/2.6/bin/" 
+  "/usr/local/bin/"
+  ;"/Library/Frameworks/Python.framework/Versions/2.6/bin/" 
   "the directory that contains user installed python scripts")
 
 
@@ -71,7 +72,7 @@ function body"
 
 (def-interactive  paddy-py-test-current-file  ()
   "call the unit_testing framework on the current file"
-  (paddy-compile (format "source ~/permalink/env.sh ; %s %s" 
+  (paddy-compile (format " cd ~/permalink ; source ~/permalink/env.sh ; %s %s" 
              paddy-py-test-single-file-test-command buffer-file-name)t))
 
 (if nil (progn 
@@ -95,7 +96,7 @@ function body"
 (defun paddy-py-test-current-file ()
   "call the unit_testing framework on the current file"
   (interactive)
-  (paddy-compile (format "source ~/permalink/env.sh ; %s %s" 
+  (paddy-compile (format "source ~/permalink/env_local.sh ;source ~/permalink/env.sh ; %s %s" 
              paddy-py-test-single-file-test-command buffer-file-name)t))
   
 (def-paddy-compile-command paddy-py-test-current-tree 

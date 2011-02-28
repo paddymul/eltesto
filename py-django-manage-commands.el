@@ -1,18 +1,13 @@
 
 (defvar paddy-py-django-manage-command 
-  "cd  ~/permalink/ ; source ~/permalink/env.sh ;  python ~/permalink/permalink/manage.py  "
+  "cd  ~/permalink/ ; source ~/permalink/env_local.sh ; source ~/permalink/env.sh ;  python ~/permalink/permalink/manage.py  "
   "the command to get to your manage.py to run django commands,
   this is a great variable to override in dir-locals")
 
-(defun run-django-command (command-str)
-  paddy
+;(defun run-django-command (command-str)
+;  paddy
+;"test  --noinput proxy.WorkingTestCase" t))
 
-
-
-  
-
-
-"test  --noinput proxy.WorkingTestCase" t))
 (defun paddy-py-test-django-working ()
   "call the unit_testing framework on the current file"
   (interactive)
